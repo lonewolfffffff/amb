@@ -2143,6 +2143,7 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver
 					'js_config_files' => $js_config_files,
 					'css_files' => $css_files,
 					'output' => $this->views_as_string,
+					'page' => 'crud'
 			);
 		}
 		elseif($this->echo_and_die === true)
@@ -4441,7 +4442,7 @@ class Grocery_CRUD extends grocery_CRUD_States
 	public function render()
 	{
 		$this->pre_render();
-
+		
 		if( $this->state_code != 0 )
 		{
 			$this->state_info = $this->getStateInfo();
