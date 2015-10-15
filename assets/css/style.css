@@ -1,224 +1,101 @@
-.carousel {
-	z-index: -99;
+
+body {
+    padding-top: 50px;
+}
+.sub-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
 }
 
-.carousel .item {
-	position: fixed; 
-	width: 100%;
+.navbar {
+	background-color: rgb(200, 255, 200);
+}
+
+.navbar #logo {
 	height: 100%;
-	background-size: cover;
-    -moz-background-size: cover;
 }
 
-.carousel .item img {
-	width: 100%;
-	height: 100%;
+.navbar-brand {
+	padding: 10px;
 }
 
-.search-result .carousel {display: none;}
-
-.jumbotron {background-color: transparent; text-shadow:1px 1px 2px black, 0 0 1em gray, 0 0 0.2em gray; color:white}
-
-a:focus, a:hover {text-decoration: none; outline: none;}
-
-body.search-result {
-	margin-bottom: 60px;
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+	margin-left: 0px;
 }
-.footer {
-    background-color: rgba(175, 175, 30, 0.75);
+
+.navbar-fixed-top {
+    border: 0 none;
+}
+.sidebar {
+    display: none;
+}
+
+.nav.sub-menu {
+	margin-left: 20px;
+}
+
+/* CRUD */
+.chzn-container-single .chzn-single {
+	height: 34px;
+	line-height: 34px;
+}
+
+.chzn-container-single .chzn-single div {
+	top: 3px;
+}
+/* end CRUD */
+
+@media (min-width: 768px) {
+.sidebar {
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
     bottom: 0;
-	left: 0;
-    height: 60px;
+    display: block;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 20px;
     position: fixed;
-    width: 100%;
-	z-index: 2;
+    top: 51px;
+    z-index: 1000;
 }
-
-.footer .container {padding-top: 20px;}
-
-.footer label {color: #fff;}
-
-.page-header {
-	margin: 10px 0 10px;
-	border-bottom: none;
 }
-
-form .panel {height: 220px;}
-
-.destinations thead {background-color: rgba(248, 207, 33, 0.2);}
-.destinations th,.destinations td {color: #000;}
-.destinations tbody tr {background-color: rgba(246, 146, 30, 0.3);}
-.destinations tbody tr:hover {background-color: #f5f5f5;}
-.destinations td.text-center button.close {float: none;}
-
-/* footer autocomplete */
-#specific_location .fa-spinner, #departure_city .fa-spinner {visibility: hidden;}
-.ui-autocomplete {position: fixed; cursor: default;z-index:9999 !important; list-style-type: none; padding:0;}
-.ui-autocomplete li {padding-left: 10px;}
-
-/**** RESULT PAGE STYLE ****/
-body.search-result { background:url(../img/internal_bg.jpg) no-repeat fixed center top; font-family: 'Open Sans', sans-serif;}
-.bold { font-weight:bold;}
-.italic { font-style:italic;}
-.yellow { color:#f6921e;}
-
-	/*Left Col*/
-	.departing_from { margin-bottom:10px;}
-	.destinations_left {
-		background:url(../img/white_trans.png) repeat;
-		padding:30px;
-		color:#434a54;
-		width:70%;
-		float:left;
-	}
-	.destinations_item { padding-bottom:15px; border-bottom:1px dotted #696969; margin-bottom:25px;}
-	.destinations_item_detail { margin:15px 0 5px;}
-	.destinations_left p { margin:0;}
-	.destinations_item_name { font-size:22px; color:#1f5f7a;  font-family: 'Roboto', sans-serif; font-weight:900;}
-	.destinations_item_price { font-weight:300;}
-	.destinations_waybox { float:left;}
-	.destinations_readmore { float:right;}
-	
-	.destinations_airlog, .destinations_depart { float:left;}
-	.destinations_depart { margin-left:20px;}
-	.destinations_airlog { width:75px;}
-	.destinations_airlog img { width:100%;}
-	.destinations_readmore a {
-		background:#f6921e;
-		color:#fff;
-		display:inline-block;
-		padding:10px 30px;
-		text-transform:uppercase;
-		line-height:normal;
-		-webkit-border-radius: 50px;
-		-moz-border-radius: 50px;
-		border-radius: 50px;
-	}
-	.destinations_readmore a:hover { background:#f68707;}
-	
-	.destinations_delete button {
-		background:none;
-		border:none;
-		font-size:11px;
-	}
-	
-	/*Right Col*/
-	.destinations_right {
-		float:right;
-		width:28%;
-		font-family: 'Roboto', sans-serif;
-		color:#3d3d3d;
-	}
-	.destinations_right label { font-weight:normal;}
-	.destinations_right_form { padding:25px; background:#fff;}
-	.destinations_right h3 {
-		font-size:30px;
-		color:#1f5f7a;
-		text-transform:uppercase;
-	}
-	
-	.direct_flight { font-size:18px; margin:15px 0 0;}
-	.direct_flight label { margin:0; margin-right:0; font-weight:normal;}
-	
-	.dep_ret { margin:20px 0;}
-	.redo_button {
-		width:100%;
-		font-size:24px;
-		text-transform:uppercase;
-		padding:7px 20px;
-		color:#fff;
-		text-align:center;
-		background:#1f5f7a;
-		border:none;
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 5px;
-		border-radius: 5px;
-	}
-	.redo_button:hover { background:#16556f;}
-	
-	.other_city {
-		background:#1f5f7a;
-		color:#fff;
-		padding:25px;
-	}
-	.other_city h4 { margin:0 0 20px;}
-	.other_city input { border:none; background:url(../img/search_icon.jpg) no-repeat right center #fff;}
-
-/*Check Box Style*/
-	.form-checkboxes { position:relative;}
-
-	.form-checkboxes label {
-		display: inline-block;
-		cursor: pointer;
-		position: relative;
-		padding-left: 25px;
-		margin-right: 15px;
-	}
-	
-	.form-radios input[type=radio],
-	.form-radios input[type=checkbox],
-	.form-checkboxes input[type=radio],
-	.form-checkboxes input[type=checkbox] {
-		display: none;
-	}
-	.form-radios label:before,
-	.form-checkboxes label:before {
-		content: "";
-		display: inline-block;
-		width: 16px;
-		height: 16px;
-		margin-right: 10px;
-		position: absolute;
-		left: 0;
-		bottom: 1px;
-		border:1px solid #1f5f7a;
-		top:6px;
-	}
-
-	input[type=radio]:checked + label:before {
-		content: "\f111";
-		font-family: 'FontAwesome';
-		color: #1f5f7a;
-		font-size: 8px;
-		text-align: center;
-		line-height: 14px;
-	}
-	
-	input[type=checkbox]:checked + label:before {
-		content: "\f00c";
-		font-family: 'FontAwesome';
-		font-size: 11px;
-		color: #1f5f7a;
-		text-align: center;
-		line-height: 15px;
-	}
-	.form-radios label:before {
-		border-radius: 8px;
-	}
-	.form-checkboxes label:before {
-		border-radius: 0px;
-	}
-
-/*Image Logo*/
-img.img-responsive {
-	width:300px;
-	height:auto;
-	padding:20px 0 0 20px;
+.nav-sidebar {
+    margin-bottom: 20px;
+    margin-left: -20px;
+    margin-right: -21px;
 }
-
-/*Home Form*/
-.home_inner { width:780px; margin:0 auto; text-align:center;}
-.home_shadow {
-/*	background:url(../img/shadow.png) no-repeat center center;
-	padding:30px 0 100px;*/
+.nav-sidebar > li > a {
+    padding-left: 20px;
+    padding-right: 20px;
 }
-.checin {
-	color: #f4911f;
-	margin-top: 20px;
-	padding-left: 338px;
-	text-align: left;
+.nav-sidebar > .active > a, .nav-sidebar > .active > a:hover, .nav-sidebar > .active > a:focus {
+    background-color: #428bca;
+    color: #fff;
 }
-.checin a { color:#f5cd23;}
-.checin .form-checkboxes label::before { top:3px; border:1px solid #f4911f;}
-.checin input[type="checkbox"]:checked + label::before { color:#fff;}
-.white { color:#fff;}
+.main {
+    padding: 20px;
+}
+@media (min-width: 768px) {
+.main {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+}
+.main .page-header {
+    margin-top: 0;
+}
+.placeholders {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.placeholders h4 {
+    margin-bottom: 0;
+}
+.placeholder {
+    margin-bottom: 20px;
+}
+.placeholder img {
+    border-radius: 50%;
+    display: inline-block;
+}
