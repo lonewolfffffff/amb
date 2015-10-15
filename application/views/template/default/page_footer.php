@@ -6,6 +6,7 @@
 	</script>
 	<script src="<?php echo base_url("assets/js/jquery-1.11.3.min.js"); ?>"></script>
 	<script src="<?php echo base_url("assets/js/jquery-ui/jquery-ui.min.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/js/jquery.appendGrid-1.6.1.min.js"); ?>"></script>
 	<script src="<?php echo base_url("assets/bootstrap/js/bootstrap.min.js"); ?>"></script>
 	<script src="<?php echo base_url("assets/bower_components/moment/min/moment.min.js"); ?>"></script>
 	<script src="<?php echo base_url("assets/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"); ?>"></script>

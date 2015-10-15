@@ -8,7 +8,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a href="<?php echo base_url(); ?>" class="navbar-brand">
-				<img id="logo" title="logo" alt="Australindo" src="<?php echo base_url('assets/img/logo-ronthkard.png'); ?>" class="img-responsive"/>
+				<img id="logo" title="logo" alt="Australindo" src="<?php echo base_url('assets/img/logo.png'); ?>" class="img-responsive"/>
 			</a>
 		</div>
 		<div class="navbar-collapse collapse" id="navbar">
@@ -23,7 +23,7 @@
 						<li class="dropdown-header">
 							
 						</li>
-						<li><a href="<?php echo base_url('user/logout'); ?>">Log out</a></li>
+						<li><a href="<?php echo base_url('logout'); ?>">Log out</a></li>
 					</ul>
 					
 				</li>

@@ -8,7 +8,8 @@
 
 				$data['sidebar'] = 'dashboard';
 				$data['page'] = 'dashboard';
-				$this->load->view('template/admin/main',$data);
+				$data['page_title'] = 'Dashboard';
+				$this->load->view('template/default/main',$data);
 
 			}
 			else {

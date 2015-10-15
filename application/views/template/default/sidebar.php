@@ -34,6 +34,7 @@
 	</li>
 </ul>
 <ul class="nav nav-sidebar">
+	<li class="disabled"><a href="">Katalog</a></li>
 	<li class="<?php echo is_selected($sidebar,'product'); ?>">
 		<a href="<?php echo base_url('product'); ?>">Daftar Produk dan Harga</a>
 	</li>
