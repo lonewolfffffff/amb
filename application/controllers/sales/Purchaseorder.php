@@ -15,32 +15,22 @@
  
 			$crud->set_table('purchase_order');
 			$crud->set_relation('customer_id','customer','name');
+			$crud->fields('po_date','po_ref','customer_id','products');
 			
-			$crud->display_as('has_details','Barang');
+			$crud->display_as('products','Barang');
 			
 			/* input grid */
-			$crud->callback_add_field('has_details',array($this,'add_field_callback_1'));
+			$crud->callback_add_field('products',array($this,'add_field_callback'));
 
 			$output = $crud->render();
 			$output->sidebar = 'sales_po';
 			$output->page_title = 'Daftar PO';
+			$output->custom_script = 'sales/po.js';
 			
 			$this->load->view('template/default/main',$output);
 		}
 		
-		public function add() {
-			
-		}
-		
-		public function edit() {
-			
-		}
-		
-		public function delete() {
-			
-		}
-		
-		function add_field_callback_1() {
+		function add_field_callback() {
 			return $this->load->view('widget/grid/purchase_order_detail','',TRUE);
 		}
 		
