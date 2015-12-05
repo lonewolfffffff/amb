@@ -50,6 +50,8 @@
 			$crud->callback_read_field('surat_jalan_date',array($this,'surat_jalan_date_read_field_callback'));
 			$crud->callback_read_field('customer_address',array($this,'customer_address_read_field_callback'));
 			$crud->callback_read_field('products',array($this,'products_read_field_callback'));
+			
+			$crud->callback_after_delete(array($this,'suratjalan_after_delete'));
 
 			$output = $crud->render();
 			$output->sidebar = 'sales_suratjalan';
@@ -238,5 +240,17 @@
 			else {
 				return $format;
 			}
+		}
+		
+		public function suratjalan_after_delete($primary_key) {
+			$invoice = $this->db->get_where('invoice',array('surat_jalan_id'=>$primary_key));
+			if($invoice) {
+				$this->db->where('invoice_id',$invoice->id);
+				$this->db->delete('invoice_detail');
+				
+				$this->db->where('id',$invoice->id);
+				$this->db->delete('invoice');
+			}
+			return $this->db->insert('user_logs',array('user_id' => $primary_key,'action'=>'delete', 'updated' => date('Y-m-d H:i:s')));
 		}
 	}

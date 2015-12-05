@@ -9,8 +9,8 @@
 					surat_jalan_ref,
 					surat_jalan_date,
 					customer.name AS customer_name,
-					customer.address AS customer_address
-					net_total
+					customer.address AS customer_address,
+					invoice.net_total
 				FROM invoice
 				JOIN surat_jalan ON invoice.surat_jalan_id=surat_jalan.id
 				JOIN customer ON surat_jalan.customer_id=customer.id

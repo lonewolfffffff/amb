@@ -15,12 +15,22 @@
 				$date_start = DateTime::createFromFormat('d/m/Y',$report_daterange[0]);
 				$date_end = DateTime::createFromFormat('d/m/Y',$report_daterange[1]);
 				
-				//$this->load->model('Invoice_report_model');
-				//$invoices = $this->invoice_report_model->get($date_start->format('Y-m-d'),$date_end->format('Y-m-d'));
-				//foreach($invoices as $invoice) {
+				$this->load->model('invoice_report_model');
+				$invoices = $this->invoice_report_model->get($date_start->format('Y-m-d'),$date_end->format('Y-m-d'));
+				$data['total_sales'] = 0;
+				foreach($invoices as $invoice) {
+					$date_invoice = DateTime::createFromFormat('Y-m-d',$invoice->invoice_date);
+					$invoice->date_invoice = $date_invoice->format('d/m/Y');
+					$invoice->invoice_no = $invoice->invoice_ref.'/'.month_to_roman($date_invoice->format('m')).'/'.$date_invoice->format('Y');
+					$invoice->po_no = $invoice->po_ref;
+					$date_suratjalan = DateTime::createFromFormat('Y-m-d',$invoice->surat_jalan_date);
+					$invoice->surat_jalan_no = $invoice->surat_jalan_ref.'/'.month_to_roman($date_suratjalan->format('m')).'/'.$date_suratjalan->format('Y');
 					
-				//}
-				//$data['invoices'] = $invoices;
+					$invoice->customer = $invoice->customer_name.'['.$invoice->customer_address.']';
+					$invoice->total = $invoice->net_total;
+					$data['total_sales'] += $invoice->total;
+				}
+				$data['invoices'] = $invoices;
 			}
 			
 			$this->load->view('template/default/main',$data);
