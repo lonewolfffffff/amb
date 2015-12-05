@@ -2,7 +2,7 @@
 	<?php
 		if(isset($modals)) {
 			foreach($modals as $modal) {
-				$this->load->view($modal);
+				$this->load->view('widget/modal/'.$modal);
 			}
 		}
 		$this->load->view("template/default/page_header");

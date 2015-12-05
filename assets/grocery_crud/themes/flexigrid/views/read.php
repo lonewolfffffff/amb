@@ -10,12 +10,12 @@
 <div class="flexigrid crud-form" style='width: 100%;' data-unique-hash="<?php echo $unique_hash; ?>">
 	<div class="mDiv">
 		<div class="ftitle">
-			<div class='ftitle-left'>
+			<div class='ftitle-left hidden'>
 				<?php echo $this->l('list_record'); ?> <?php echo $subject?>
 			</div>
 			<div class='clear'></div>
 		</div>
-		<div title="<?php echo $this->l('minimize_maximize');?>" class="ptogtitle">
+		<div title="<?php echo $this->l('minimize_maximize');?>" class="ptogtitle hidden">
 			<span></span>
 		</div>
 	</div>
@@ -52,7 +52,10 @@
 		<div id='report-error' class='report-div error'></div>
 		<div id='report-success' class='report-div success'></div>
 	</div>
-	<div class="pDiv">
+	<div class="pDiv hidden-print">
+		<div class='form-button-box'>
+			<input type='button' value='<?php echo $this->l('form_print'); ?>' class="btn btn-large back-to-list" id="print-button" />
+		</div>
 		<div class='form-button-box'>
 			<input type='button' value='<?php echo $this->l('form_back_to_list'); ?>' class="btn btn-large back-to-list" id="cancel-button" />
 		</div>
@@ -60,6 +63,13 @@
 			<div class='small-loading' id='FormLoading'><?php echo $this->l('form_update_loading'); ?></div>
 		</div>
 		<div class='clear'></div>
+	</div>
+	<div class="row visible-print-block">
+		<div style="width:4cm;">
+			<div class="text-center">Penerima</div>
+			<div style="margin-top:2.5cm;"><span class="pull-left">(</span><span class="pull-right">)</span><span class="clearfix"></span></div>
+		</div>
+		<div class="col-md-10">&nbsp;</div>
 	</div>
 	<?php echo form_close(); ?>
 </div>

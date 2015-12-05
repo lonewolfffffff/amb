@@ -45,6 +45,8 @@ body {
 }
 /* end CRUD */
 
+.form-row {margin-top: 5px; margin-bottom: 5px;}
+
 @media (min-width: 768px) {
 .sidebar {
     background-color: #f5f5f5;

@@ -64,6 +64,9 @@
 				<input type='button' value='<?php echo $this->l('form_cancel'); ?>' class="btn btn-large" id="cancel-button" />
 			</div>
 <?php 	} ?>
+			<div id="form-print-button" class='form-button-box collapse'>
+				<input type='button' value='<?php echo $this->l('form_print'); ?>' class="btn btn-large" id="print-button" />
+			</div>
 			<div class='form-button-box'>
 				<div class='small-loading' id='FormLoading'><?php echo $this->l('form_insert_loading'); ?></div>
 			</div>

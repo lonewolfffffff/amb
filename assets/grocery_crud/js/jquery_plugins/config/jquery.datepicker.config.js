@@ -5,6 +5,7 @@ $(function(){
 			changeMonth: true,
 			changeYear: true
 	});
+	$('.datepicker-input').datepicker("setDate", new Date() );
 	
 	$('.datepicker-input-clear').button();
 	

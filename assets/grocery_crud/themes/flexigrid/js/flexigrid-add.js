@@ -66,6 +66,10 @@ $(function(){
 									});
 									clearForm();
 									form_success_message(data.success_message);
+									
+									if($('#form-print-button').length) {
+										
+									}
 								}
 								else
 								{

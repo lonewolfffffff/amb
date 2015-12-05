@@ -3507,6 +3507,7 @@ class Grocery_CRUD extends grocery_CRUD_States
 	protected $callback_column			= array();
 	protected $callback_add_field		= array();
 	protected $callback_edit_field		= array();
+	protected $callback_read_field		= array();
 	protected $callback_upload			= null;
 	protected $callback_before_upload	= null;
 	protected $callback_after_upload	= null;
@@ -4430,6 +4431,11 @@ class Grocery_CRUD extends grocery_CRUD_States
 		$this->_load_date_format();
 
 		$this->_set_primary_keys_to_model();
+		
+		//$this->unset_read();
+		$this->unset_export();
+		$this->unset_print();
+		$this->unset_jquery_ui();
 	}
 
 	/**
@@ -4873,6 +4879,19 @@ class Grocery_CRUD extends grocery_CRUD_States
 	public function callback_edit_field($field, $callback = null)
 	{
 		$this->callback_edit_field[$field] = $callback;
+
+		return $this;
+	}
+	
+	/**
+	 *
+	 * Enter description here ...
+	 * @param string $field
+	 * @param mixed $callback
+	 */
+	public function callback_read_field($field, $callback = null)
+	{
+		$this->callback_read_field[$field] = $callback;
 
 		return $this;
 	}

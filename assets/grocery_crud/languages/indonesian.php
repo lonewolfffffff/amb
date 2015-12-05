@@ -34,6 +34,7 @@
 	$lang['insert_success_message'] = 'Data telah ditambahkan.';
 	$lang['form_or']				= 'atau';
 	$lang['form_save'] 				= 'Simpan';
+	$lang['form_print'] 			= 'Cetak';
 	$lang['form_insert_loading'] 	= 'Mohon Tunggu';
 
 	$lang['form_upload_a_file'] 	= 'Unggah berkas';

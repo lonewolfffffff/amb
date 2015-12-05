@@ -4,6 +4,7 @@
 	<script>
 		var base_url = '<?php echo base_url() ?>';
 	</script>
+	<script src="<?php echo base_url("assets/js/jquery-1.11.3.min.js"); ?>"></script>
 	<?php
 		if(isset($js_files)) {
 			foreach($js_files as $file):
@@ -13,15 +14,15 @@
 			endforeach;
 		}
 	?>
-	
-	<script src="<?php echo base_url("assets/js/jquery.appendGrid-1.6.1.min.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/grocery_crud/js/jquery_plugins/ui/jquery-ui-1.10.3.custom.min.js"); ?>"></script>
 	<script src="<?php echo base_url("assets/bootstrap/js/bootstrap.min.js"); ?>"></script>
 	<script src="<?php echo base_url("assets/bower_components/moment/min/moment.min.js"); ?>"></script>
-	<script src="<?php echo base_url("assets/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"); ?>"></script>
-	<script src="<?php echo base_url("assets/select2/select2.min.js"); ?>"></script>
-	
-	<script src="<?php echo base_url("assets/js/utils.js"); ?>"></script>
-	<script src="<?php echo base_url("assets/js/datetime_helper.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/js/daterangepicker.js"); ?>"></script>
+	<script>
+		$.fn.bootstrapBtn = $.fn.button.noConflict();
+	</script>
+	<script src="<?php echo base_url("assets/js/jquery.appendGrid-1.6.1.min.js"); ?>"></script>
 	<?php if(isset($custom_script)) { ?>
 		<script src="<?php echo base_url("assets/js/$custom_script"); ?>"></script>
-	<?php } ?>
+	<?php }
+	
